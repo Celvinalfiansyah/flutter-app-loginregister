@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout, color: Colors.white),
             onPressed: () {
-              // Kembali ke halaman login
               Navigator.pushNamedAndRemoveUntil(
                 context, 
                 '/login',
@@ -65,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Celvin', // Ganti dengan nama kalian coy
+                      'Celvin', 
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -76,7 +75,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              // Menu Grid
               const Text(
                 'Quick Menu',
                 style: TextStyle(

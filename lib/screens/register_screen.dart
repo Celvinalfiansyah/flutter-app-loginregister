@@ -22,7 +22,6 @@ class RegisterScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 20),
-              // Title
               const Text(
                 'Create Account',
                 textAlign: TextAlign.center,
@@ -42,7 +41,6 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              // Form Fields
               TextField(
                 decoration: InputDecoration(
                   hintText: 'Full Name',
@@ -97,7 +95,6 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              // Register Button
               ElevatedButton(
                 onPressed: () {},
                 child: const Text(

@@ -8,19 +8,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // Buat TextEditingController untuk mengontrol input
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  // Fungsi untuk auto-fill (biar tidak ngetik untuk login,hanya untuk demo ya gais yaa)
+ 
   void _autoFillLogin() {
-    _emailController.text = "user@example.com"; // Email default (ganti terserah anda wak)
-    _passwordController.text = "password123"; // Password default
+    _emailController.text = "celvin@example.com"; 
+    _passwordController.text = "password123"; 
   }
 
   @override
   void dispose() {
-    // Bersihkan controller ketika widget di dispose
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -37,14 +35,12 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 50),
-              // Logo atau Ilustrasi
               const Icon(
                 Icons.lock_outlined,
                 size: 100,
                 color: Color(0xFF4E7D96),
               ),
               const SizedBox(height: 30),
-              // Welcome Text
               const Text(
                 'Welcome Back!',
                 textAlign: TextAlign.center,
@@ -64,9 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 50),
-              // Form Fields
               TextField(
-                controller: _emailController, // Tambahkan controller
+                controller: _emailController, 
                 decoration: InputDecoration(
                   hintText: 'Email',
                   prefixIcon: const Icon(Icons.email_outlined, color: Color(0xFF4E7D96)),
@@ -76,7 +71,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.grey[100],
-                  // Tambahkan suffix icon untuk clear text
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.clear),
                     onPressed: () => _emailController.clear(),
@@ -85,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 16),
               TextField(
-                controller: _passwordController, // Tambahkan controller
+                controller: _passwordController, 
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Password',
@@ -96,7 +90,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   filled: true,
                   fillColor: Colors.grey[100],
-                  // Tambahkan suffix icon untuk clear text
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.clear),
                     onPressed: () => _passwordController.clear(),
@@ -104,7 +97,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 24),
-              // Auto-fill Button
               TextButton(
                 onPressed: _autoFillLogin,
                 child: const Text(
@@ -115,10 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              // Login Button
               ElevatedButton(
                 onPressed: () {
-                  // Cek kredensial sebelum navigasi
                   if (_emailController.text.isNotEmpty && 
                       _passwordController.text.isNotEmpty) {
                     Navigator.pushNamedAndRemoveUntil(
@@ -127,7 +117,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       (route) => false,
                     );
                   } else {
-                    // Tampilkan pesan error jika form kosong 
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Please fill in all fields'),
@@ -142,7 +131,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              // Register Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
